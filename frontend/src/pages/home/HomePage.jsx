@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import HebrewDateDisplay from '../../components/calendar/HebrewDateDisplay';
+import HebrewEvents from '../../components/calendar/HebrewEvents';
 
 const HomePage = () => {
   const [todayEvents, setTodayEvents] = useState([]);
@@ -42,6 +44,9 @@ const HomePage = () => {
 
   return (
     <div className="space-y-8">
+      {/* תאריך עברי */}
+      <HebrewDateDisplay />
+      
       {/* ברכת פתיחה */}
       <div className="bg-white rounded-xl shadow-lg p-8 text-center">
         <h2 className="text-3xl font-bold text-familia-blue mb-4">
@@ -77,6 +82,9 @@ const HomePage = () => {
           </p>
         )}
       </div>
+
+      {/* אירועים עבריים מהאקסל */}
+      <HebrewEvents />
 
       {/* תמונות אחרונות */}
       <div className="bg-white rounded-xl shadow-lg p-6">
