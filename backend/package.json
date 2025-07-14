@@ -3,10 +3,16 @@
   "version": "1.0.0",
   "description": "שרת אתר משפחת שילוביצקי",
   "main": "server.js",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "init-db": "node database/init.js"
+    "init-db": "node database/init.js",
+    "build": "echo 'No build step needed for Express.js'",
+    "render-build": "./render-build.sh"
   },
   "keywords": [
     "family",

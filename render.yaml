@@ -3,11 +3,18 @@ services:
     name: familia-shilo-backend
     env: node
     plan: free
-    buildCommand: cd backend && npm install
-    startCommand: cd backend && npm start
+    runtime: node
+    buildCommand: ./render-build.sh
+    startCommand: node server.js
     rootDir: backend
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
-        value: 10000 
+        value: 10000
+      - key: NPM_CONFIG_PRODUCTION
+        value: true
+      - key: DISABLE_NEXTJS
+        value: true
+      - key: BUILD_TOOL
+        value: none 
