@@ -22,6 +22,22 @@ app.use('/api/photos', require('./routes/photos'));
 app.use('/api/discussions', require('./routes/discussions'));
 app.use('/api/users', require('./routes/users'));
 
+// Root route
+app.get('/', (req, res) => {
+  res.json({ 
+    message: '✅ ברוך הבא לאתר המשפחתי של שילוביצקי! 👨‍👩‍👧‍👦',
+    status: 'השרת רץ בהצלחה',
+    endpoints: {
+      health: '/api/health',
+      events: '/api/events',
+      photos: '/api/photos',
+      discussions: '/api/discussions',
+      users: '/api/users'
+    },
+    version: '1.0.0'
+  });
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ message: 'שרת משפחת שילוביצקי פועל בהצלחה! 💙' });
